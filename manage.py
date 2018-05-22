@@ -12,13 +12,16 @@ import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'a looooong string'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
+#     os.path.join(basedir, 'data.sqlite')
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:sbpeccwt@' + \
     os.path.join(basedir, 'data.sqlite')
 
 manager = Manager(app)
 bootstrap = Bootstrap(app)
 moment = Moment(app)
-db = SQLAlchemy()
+db = SQLAlchemy(app)
 
 
 class Role(db.Model):
