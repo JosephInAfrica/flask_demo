@@ -35,10 +35,12 @@ class User(UserMixin, db.Model):
 		self.last_seen=datetime.utcnow()
 		db.session.add(self)
 		db.session.commit()
-		
+
 	name=db.Column(db.String(64))
 	location=db.Column(db.String(64))
 	about_me=db.Column(db.Text())
 	member_since=db.Column(db.DateTime(),default=datetime.utcnow)
 	last_seen=db.Column(db.DateTime(),default=datetime.utcnow)
+
+
 
