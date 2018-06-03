@@ -8,7 +8,12 @@ Flasky User Page
 {% block page_content %}
 
 <div class="page-header">
-	<h1>Hello,{{name}}!</h1>
+	
+	<h1>{{user.username}}</h1>
+	{% if user.name %}
+	{{user.name}}
+	{% endif %}
+
 </div>
 
 {% endblock %}
