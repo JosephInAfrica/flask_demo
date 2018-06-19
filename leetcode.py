@@ -12,4 +12,4 @@ class Solution:
 
 
 s = Solution()
-print(s.twoSum(s.nums, s.target))
+print(s.twoSum(s.nums, s.targe)
